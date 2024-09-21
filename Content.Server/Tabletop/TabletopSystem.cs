@@ -10,6 +10,7 @@ using Content.Shared.Tabletop.Events;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
+using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
@@ -94,6 +95,9 @@ namespace Content.Server.Tabletop
             var handEnt = hands.ActiveHand.HeldEntity.Value;
 
             if (!TryComp<ItemComponent>(handEnt, out var item))
+                return;
+
+            if (session.Entities.Count >= _cfg.GetCVar(CCVars.GameTabletopMaxMarkers))
                 return;
 
             var meta = MetaData(handEnt);

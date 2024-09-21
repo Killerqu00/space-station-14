@@ -425,6 +425,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.tabletop_place", false, CVar.SERVERONLY);
 
         /// <summary>
+        /// How many markers (=entities) can be on the tabletop game board at the same time.
+        /// </summary>
+        public static readonly CVarDef<int> GameTabletopMaxMarkers =
+            CVarDef.Create("game.tabletop_max_markers", 70, CVar.SERVERONLY);
+
+        /// <summary>
         /// If true, contraband severity can be viewed in the examine menu
         /// </summary>
         public static readonly CVarDef<bool> ContrabandExamine =
