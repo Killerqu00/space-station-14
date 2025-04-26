@@ -11,6 +11,7 @@ namespace Content.Server.Kitchen.EntitySystems;
 public sealed class KnowledgeSystem : SharedKnowledgeSystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
+
     /// <summary>
     /// Grant an entity knowledge fully, ignoring progress.
     /// </summary>
